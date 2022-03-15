@@ -4,15 +4,16 @@ public class MoodAnalyzer {
 
     public String message;
 
-    public String analyzeMood (String message) {
+    public String analyzeMood (String message) throws MoodAnalyzerException{
+
         if (message.equalsIgnoreCase("sad")) {
             return "SAD";
-        } else {
+        } else  {
             return "HAPPY";
         }
     }
 
-    public String analyzeMood() {
+    public String analyzeMood() throws MoodAnalyzerException{
         if (this.message.equalsIgnoreCase("sad")) {
             return "SAD";
         } else {
