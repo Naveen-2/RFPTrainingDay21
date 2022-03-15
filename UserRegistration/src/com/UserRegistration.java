@@ -16,7 +16,7 @@ public class UserRegistration {
      * UserRegistration() - constructor to create object by getting input from user
      * gets user registration details and stores in the variables
      */
-    public UserRegistration() {
+    public UserRegistration() throws UserRegistrationException {
 
         System.out.print("Enter First name: ");
         setFirstName(input.nextLine());
@@ -41,7 +41,7 @@ public class UserRegistration {
      *                  and then sets it to firstName variable of this class
      *                  else asks to enter the first name again
      */
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName) throws UserRegistrationException{
         if(userValidation.isFirstNameValid(firstName))
             this.firstName = firstName;
         else{
@@ -58,7 +58,7 @@ public class UserRegistration {
      *                  and then sets it to lastName variable of this class
      *                 else asks to enter last name again
      */
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) throws UserRegistrationException {
         if(userValidation.isLastNameValid(lastName))
             this.lastName = lastName;
         else{
@@ -74,7 +74,7 @@ public class UserRegistration {
      *              and then sets it to email variable of this class
      *              else asks to enter email again
      */
-    public void setEmail(String email) {
+    public void setEmail(String email) throws UserRegistrationException {
         if(userValidation.isEmailValid(email))
             this.email = email;
         else{
@@ -90,7 +90,7 @@ public class UserRegistration {
      *              and then sets it to phoneNumber variable of this class
      *              else asks to enter phone number again
      */
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) throws UserRegistrationException {
         if (userValidation.isPhoneNumberValid(phoneNumber))
            this.phoneNumber = phoneNumber;
         else{
@@ -106,7 +106,7 @@ public class UserRegistration {
      *              and then sets it to password variable of this class
      *              else asks to enter password again
      */
-    public void setPassword(String password) {
+    public void setPassword(String password) throws UserRegistrationException {
         if (userValidation.isPasswordValid(password))
             this.password = password;
         else {

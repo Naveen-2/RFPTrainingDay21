@@ -20,18 +20,17 @@ public class UserValidation {
      * @param firstName - user input data
      * @return - boolean value if first name matches with its regex condition
      */
-    public boolean isFirstNameValid(String firstName){
+    public boolean isFirstNameValid(String firstName) throws UserRegistrationException{
 
         /*
         validateRegex function is called by passing first name user input
         and first name regex pattern stored in RegexConstants class
          */
-        if (validateRegex(firstName, RegexConstants.FIRST_NAME_REGEX)){
+        if (validateRegex(firstName, RegexConstants.FIRST_NAME_REGEX)) {
             return true;
         } else {
-            System.out.println("Invalid first name.");
+            throw new UserRegistrationException("Invalid First Name.");
         }
-        return false;
     }
 
     /**
@@ -40,7 +39,7 @@ public class UserValidation {
      * @param lastName - user input data
      * @return - boolean value if first name matches with its regex condition
      */
-    public boolean isLastNameValid(String lastName){
+    public boolean isLastNameValid(String lastName) throws UserRegistrationException {
         /*
         validateRegex function is called by passing last name user input
         and last name regex pattern stored in RegexConstants class
@@ -48,9 +47,8 @@ public class UserValidation {
         if (validateRegex(lastName, RegexConstants.LAST_NAME_REGEX)){
             return true;
         } else {
-            System.out.println("Invalid last name.");
+            throw new UserRegistrationException("Invalid Last Name.");
         }
-        return false;
     }
 
     /**
@@ -59,7 +57,7 @@ public class UserValidation {
      * @param email - user input data
      * @return - boolean value if email matches with its regex condition
      */
-    public boolean isEmailValid(String email){
+    public boolean isEmailValid(String email) throws UserRegistrationException {
         /*
         validateRegex function is called by passing email user input
         and email regex pattern stored in RegexConstants class
@@ -67,9 +65,8 @@ public class UserValidation {
         if (validateRegex(email, RegexConstants.EMAIL_REGEX)){
             return true;
         } else {
-            //System.out.println("Invalid email.");
+            throw new UserRegistrationException("Invalid Email.");
         }
-        return false;
     }
 
     /**
@@ -78,7 +75,7 @@ public class UserValidation {
      * @param phoneNumber - user input data
      * @return - boolean value if phone number matches with its regex condition
      */
-    public boolean isPhoneNumberValid(String phoneNumber){
+    public boolean isPhoneNumberValid(String phoneNumber) throws  UserRegistrationException {
         /*
         validateRegex function is called by passing phone number user input
         and phone number regex pattern stored in RegexConstants class
@@ -86,9 +83,8 @@ public class UserValidation {
         if (validateRegex(phoneNumber, RegexConstants.PHONE_NUMBER_REGEX)){
             return true;
         } else {
-            System.out.println("Invalid phone number.");
+            throw new UserRegistrationException("Invalid Phone number.");
         }
-        return false;
     }
 
     /**
@@ -97,7 +93,7 @@ public class UserValidation {
      * @param password - user input data
      * @return - boolean value if password matches with its regex condition
      */
-    public boolean isPasswordValid(String password){
+    public boolean isPasswordValid(String password) throws UserRegistrationException {
         /*
         validateRegex function is called by passing password user input
         and password regex pattern stored in RegexConstants class
@@ -105,8 +101,7 @@ public class UserValidation {
         if (validateRegex(password, RegexConstants.PASSWORD_REGEX)){
             return true;
         } else {
-            System.out.println("Invalid password.");
+            throw new UserRegistrationException("Invalid Password.");
         }
-        return false;
     }
 }
